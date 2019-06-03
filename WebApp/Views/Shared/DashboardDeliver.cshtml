@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ACME</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/Views/SideBarDashboard.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/PopUp.js"></script>
+    <script src="~/Scripts/Views/LogOut.js"></script>
+    <link href="~/Content/CustomScrollbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="~/Content/StyleDashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <main>
+
+        <div class="wrapper">
+            <nav id="sidebar">
+
+                <div class="sidebar-header">
+                    <center>
+                        <h2>ACME</h2>
+                        <h4>Mensajero</h4>
+                    </center>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <!--Start first option  -->
+                    <li class="">
+                        <a data-toggle="collapse" aria-expanded="false" href="#collapse1">Pedidos</a>
+                    </li>
+                    <ul class="collapse list-unstyled" id="collapse1">
+                        <li class="trigger_popup_fricc"><a>Pedidos por realizar </a></li>
+                        <li class="trigger_popup_fricc"><a>Pedidos en proceso de entrega </a></li>
+                        <li class="trigger_popup_fricc"><a>Pedidos realizados </a></li>
+                    </ul>
+                    <!--End first option  -->
+                    <!--Start second option  -->
+                    <li class="">
+                        <a data-toggle="collapse" aria-expanded="false" href="#collapse2">Perfil</a>
+                    </li>
+                    <ul class="collapse list-unstyled" id="collapse2">
+                        <li><a href="http://localhost:52014/Deliver/vUpdateDeliver">Modificar información de perfil </a></li>
+                    </ul>
+                    <!--End second option  -->
+
+
+                    <li><a onclick="LogOut()">Salir</a></li>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                </ul>
+            </nav>
+            <div class="hover_bkgr_fricc">
+                <span class="helper"></span>
+                <div>
+                    <div class="popupCloseButton">X</div>
+                    <h1>&#9785;</h1>
+                    <h3>Lo sentimos, esta opción no está disponible...</h3>
+                    <h3>¡Estamos trabajando en ello!</h3>
+                </div>
+            </div>
+            <div id="content">
+                <div id="postContent">
+
+                    @RenderBody()
+                </div>
+
+            </div>
+
+
+    </main>
+
+</body>
+
+</html>
+
+

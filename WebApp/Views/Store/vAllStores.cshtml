@@ -1,0 +1,17 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vAllRetrieveStore.js"></script>
+@{
+               Layout = "~/Views/Shared/DashboardPlatform.cshtml";
+}
+@Html.CtrlTable(viewName: "vRetrieveStore", id: "tblStore", title: "Lista de tiendas",
+columnsTitle: "#,Nombre,Número Telefono,Estado", ColumnsDataName: "Id,Name,Phone,State", onSelectFunction: "BindFields")
+
+<div class="row input-group">
+    <div class="col-lg-6 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveStore", id: "btnActive", label: "Activar", onClickFunction: "Delete", buttonType: "success")
+    </div>
+    <div class="col-lg-6 d-inline-block text-lg-right">
+        @Html.CtrlButton(viewName: "vRetrieveStore", id: "btnDelete", label: "Desactivar", onClickFunction: "Delete", buttonType: "danger")
+    </div>
+</div>
+

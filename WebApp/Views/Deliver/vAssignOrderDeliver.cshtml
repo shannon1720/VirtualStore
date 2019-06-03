@@ -1,0 +1,35 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/DashboardBussiness.cshtml";
+
+}
+
+<script src="~/Scripts/Views/vAssignOrderDeliver.js"></script>
+
+<div class="text-center">
+    <h1> Asignar orden a mensajero </h1>
+    <br />
+    <br />
+</div>
+
+<div class="col-lg-6">
+    <h3>Asignar orden</h3>
+    <label>Orden</label>
+    <select class="form-control" id="CategorySelect" columndataname="IdCategory"></select>
+</div>
+<div class="col-lg-6">
+    <h3>Asignar mensajero</h3>
+    <label>Mensajero</label>
+    <select class="form-control" id="CurrencySelect" columndataname="IdCurrency"></select>
+</div>
+<div class="row input-group">
+    <br />
+    <div class="col-lg-2 d-inline-block"></div>    
+    <div class="col-lg-5 d-inline-block">
+        @Html.CtrlButton(viewName: "vAssignOrderDeliver", id: "btnAssign", label: "Asignar", onClickFunction: "Create", buttonType: "success")
+    </div>
+    <div class="col-lg-3 d-inline-block text-lg-right">
+        @Html.CtrlButton(viewName: "vAssignOrderDeliver", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+    </div>
+</div>

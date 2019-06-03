@@ -1,0 +1,120 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="containerFrom">
+    <form id="frmBussines">
+
+        <div class="row">
+            <h3>Registro de administrador de empresa</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divImagen"></div>
+                @Html.CtrlInput(id: "txtFile", type: "text", label: "Foto de perfil", columnDataName: "URL_Profile_Pric")
+                @Html.CtrlButton(viewName: "vBussinesManager", id: "btnSelectImage1", label: "Seleccione una imagen", buttonType: "warning")
+
+            </div>
+            <div class="col-lg-4">
+                <div id="divImagen1"></div>
+                @Html.CtrlInput(id: "txtphotoId", type: "text", label: "Foto de identificación", columnDataName: "URL_Photo_ID")
+                @Html.CtrlButton(viewName: "vBussinesManager", id: "btnSelectImage2", label: "Seleccione una imagen", buttonType: "warning")
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "Id")
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_1", type: "text", label: "Primer nombre", columnDataName: "Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_2", type: "text", label: "Segundo nombre (opcional)", columnDataName: "Name_2")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_1", type: "text", label: "Primer apellido", columnDataName: "LastName_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_2", type: "text", label: "Segundo apellido  (opcional)", columnDataName: "LastName_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_1", type: "text", label: "Teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_2", type: "text", label: "Teléfono (opcional)", columnDataName: "Phone_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo", columnDataName: "Email")
+            </div>
+           
+        </div>
+
+        <div class="row">
+            <div class="card border-warning mb-3" style="width: 500px;">
+               
+                <div class="card-body">
+                    <h4 class="card-title">Aviso!</h4>
+                    <h5 class="card-title">La contraseña debe cumplir con:</h5>
+                    <p class="card-text">-Un caracter especial.<br />
+                    -Una letra minúscula.<br />
+                    -Un número.<br />
+                    -Una letra mayúscula.<br />
+                    -Mínimo de 8 caracteres<br />
+                    -Sin espacios.</p>
+                 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPassword", type: "password", label: "Contraseña", columnDataName: "Password")
+               
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtVerifyPassword", type: "password", label: "Confirmar contraseña", columnDataName: "VerifyPassword")
+            </div>
+        </div>
+
+    </form>
+
+ 
+
+ 
+        <div class="row text-center">
+            <div class="col-lg-2">
+                <center>
+                    @Html.CtrlButton(viewName: "vBussinesManager", id: "btnCreate", label: "Registrarse", onClickFunction: "validateInput", buttonType: "success")
+                </center>
+            </div>
+           
+        </div>
+
+</div>
+
+
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/vBussinesManager.js"></script>
+<script src="~/Scripts/Views/UploadImage.js"></script>
+
+
+
+
+

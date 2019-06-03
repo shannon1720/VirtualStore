@@ -1,0 +1,41 @@
+﻿@using WebApp.Helpers;
+@{
+
+    Layout = "~/Views/Shared/BlankLayout.cshtml";
+}
+
+<div class="containerPassword">
+
+    <div class="row justify-content-center"></div>
+
+    <form id="frmCode">
+        <h1>Verificación de cuenta</h1>
+        <br />
+        <br />
+        <div class="row" style="margin-left:40%;">
+            <div col-lg-4">
+                <h3>Digite el correo electronico</h3>
+                @Html.CtrlInput(id: "txtEmail",  type: "text", label: "", columnDataName: "Email")
+            </div>
+        </div>
+        <br />
+        <div class="row" style="margin-left: 40%;">
+            <div col-lg-12">
+                <h3>     Digite el codigo </h3>
+                @Html.CtrlInput(id: "txtUserCode", type: "text", label: "", columnDataName: "Code")
+            </div>
+        </div>
+        <br />
+    </form>
+    <br />
+    <div class=" row">
+        <div style="margin-left:37%;">
+                @Html.CtrlButton(viewName: "vUserCode", id: "btnRegistrar", label: "Verificación", onClickFunction: "validateInput", buttonType: "success")
+        </div>
+        <div class="col-lg-5  text-lg-left">
+            @Html.CtrlButton(viewName: "vUserCode", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancelar", buttonType: "danger")
+        </div>
+    </div>
+</div>
+ 
+<script src="~/Scripts/Views/vUserCode.js"></script>

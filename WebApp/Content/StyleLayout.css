@@ -1,0 +1,78 @@
+﻿
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+    background-image: url(../Content/imgs/backgroundF.jpg);
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+label {
+    color: #5b4e4e;
+}
+
+input {
+    background-color: transparent;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 300px);
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    /*position: absolute;*/
+    top: 0;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#postContent {
+    overflow: scroll;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    overflow-x: hidden;
+    width: calc(100% - 100px);
+    padding: 40px;
+    margin-top: 5px;
+    margin-right: 45px;
+    height: 98%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px grey;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    -webkit-box-shadow: -7px 2px 72px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 2px 72px -17px rgba(0,0,0,0.75);
+    box-shadow: -7px 2px 72px -17px rgba(0,0,0,0.75);
+}
+
+#content.active {
+    width: 100%;
+}
+
+.container body-content {
+    width: 100%;
+    background-color: transparent;
+}

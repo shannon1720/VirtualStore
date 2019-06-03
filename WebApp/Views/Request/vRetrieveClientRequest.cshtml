@@ -1,0 +1,16 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/DashboardClient.cshtml";
+}
+
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/Views/vRetrieveClientRequest.js"></script>
+
+@Html.CtrlTable(viewName: "vRetrieveClientRequest", id: "tblClientRequest", title: "Mis peticiones",
+columnsTitle: "Descripción",
+ColumnsDataName: "Description",
+onSelectFunction: "BindFields")
+
+

@@ -1,0 +1,108 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/DashboardStore.cshtml";
+
+}
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="text-center">
+    <h1> Registrar Producto </h1>
+    <br />
+    <br />
+</div>
+<div class="col-lg-12">
+    <form id="InventoryForm">
+        @Html.CtrlInput(id: "txtIdCellar", type: "text", label: "", columnDataName: "IdCellar")
+    </form>
+    <form id="ProductForm">      
+        <div class="row">
+            <div class="col-lg-6">
+                @Html.CtrlInput(id: "txtName", type: "text", label: "Nombre", columnDataName: "Name")
+            </div>
+            <div class="col-lg-6">
+                @Html.CtrlInput(id: "txtDescription", type: "text", label: "Descripción", columnDataName: "Description")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                @Html.CtrlInput(id: "txtPriceInitial", type: "text", label: "Precio de compra", columnDataName: "PriceInitial")
+            </div>
+            <div class="col-lg-6">
+                @Html.CtrlInput(id: "txtPriceFinal", type: "text", label: "Precio de venta", columnDataName: "PriceFinal")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                @Html.CtrlInput(id: "txtTaxes", type: "text", label: "Porcentaje de impuesto", columnDataName: "Taxes")
+            </div>
+            <div class="col-lg-6">
+                @Html.CtrlInput(id: "txtProvider", type: "text", label: "Proveedor", columnDataName: "Provider")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label>Categoria</label>
+                <select class="form-control" id="CategorySelect" columndataname="IdCategory"></select>
+            </div>
+            <div class="col-lg-6">
+                <label>Moneda</label>
+                <select class="form-control" id="CurrencySelect" columndataname="IdCurrency"></select>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+    </form>
+    <form id="MediaForm">
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divImage1" class="text-center"></div>
+                @Html.CtrlButton(viewName: "vCreateProduct", id: "btnProductImage1", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtImage1", type: "text", label: "Foto de Producto 1", columnDataName: "Image1")
+            </div>
+            <div class="col-lg-4">
+                <div id="divImage2"></div>
+                @Html.CtrlButton(viewName: "vCreateProduct", id: "btnProductImage2", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtImage2", type: "text", label: "Foto de Producto 2", columnDataName: "Image2")
+            </div>
+            <div class="col-lg-4">
+                <div id="divImage3"></div>
+                @Html.CtrlButton(viewName: "vCreateProduct", id: "btnProductImage3", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtImage3", type: "text", label: "Foto de Producto 3", columnDataName: "Image3")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divImage4"></div>
+                @Html.CtrlButton(viewName: "vCreateProduct", id: "btnProductImage4", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtImage4", type: "text", label: "Foto de Producto 4", columnDataName: "Image4")
+            </div>
+            <div class="col-lg-4">
+                <div id="divImage5"></div>
+                @Html.CtrlButton(viewName: "vCreateProduct", id: "btnProductImage5", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtImage5", type: "text", label: "Foto de Producto 5", columnDataName: "Image5")
+            </div>
+            <div class="col-lg-4">
+                <div id="divVideo"></div>
+                @Html.CtrlButton(viewName: "vCreateProduct", id: "btnVideo", label: "Seleccione una video", buttonType: "warning")
+                @Html.CtrlInput(id: "txtVideo", type: "text", label: "Video del producto", columnDataName: "Video")
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+    </form>
+    <div class="row input-group">
+        <div class="col-lg-6 d-inline-block">
+            @Html.CtrlButton(viewName: "vCreateProduct", id: "btnCreate", label: "Registrar", onClickFunction: "Create", buttonType: "success")
+        </div>
+        <div class="col-lg-6 d-inline-block text-lg-right">
+            @Html.CtrlButton(viewName: "vCreateProduct", id: "btnCancel", label: "Cancel", onClickFunction: "Cancel", buttonType: "danger")
+        </div>
+    </div>
+</div>
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/vCreateProduct.js"></script>
+<script src="~/Scripts/Views/UploadImageProduct.js"></script>

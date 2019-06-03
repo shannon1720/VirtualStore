@@ -1,0 +1,131 @@
+﻿@using WebApp.Helpers;
+
+@{
+                /**/
+
+     Layout = "~/Views/Shared/DashboardStore.cshtml";
+
+}
+<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+    <span id="alert_message"></span>
+</div>
+<div class="containerSeller">
+
+    <div class="row justify-content-center"></div>
+    <form id="frmSeller">
+
+        <div class="row">
+            <h3>Registro de vendedor</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divImagen"></div>
+                @Html.CtrlInput(id: "txtFile", type: "text", label: "Foto de perfil", columnDataName: "Url_Profile_Pric")
+                @Html.CtrlButton(viewName: "vCreateSeller", id: "btnSelectImage1", label: "Seleccione una imagen", buttonType: "warning")
+            </div>
+            <div class="col-lg-4">
+                <div id="divImagen1"></div>
+                @Html.CtrlInput(id: "txtphotoId", type: "text", label: "Foto de identificación", columnDataName: "Url_Photo_ID")
+                @Html.CtrlButton(viewName: "vCreateSeller", id: "btnSelectImage2", label: "Seleccione una imagen", buttonType: "warning")
+            </div>
+        </div>
+        <br />
+        <h3>Información Personal</h3>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "ID")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo", columnDataName: "Email")
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_1", type: "text", label: "Primer nombre", columnDataName: "Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_2", type: "text", label: "Segundo nombre (Opcional)", columnDataName: "Name_2")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_1", type: "text", label: "Primer apellido", columnDataName: "Last_Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_2", type: "text", label: "Segundo apellido(Opcional)", columnDataName: "Last_Name_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_1", type: "text", label: "Teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_2", type: "text", label: "Teléfono (Opcional)", columnDataName: "Phone_2")
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPassword", type: "password", label: "Contraseña", columnDataName: "Password")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtVerifyPassword", type: "password", label: "Confirmar contraseña", columnDataName: "VerifyPassword")
+            </div>
+            <div class="col-lg-4">
+                @*@Html.CtrlInput(id: "txtIdentification", type: "text", label: "Identificacion de tienda", columnDataName: "ID_Store")*@
+                <input type="text" class="form-control" id="txtIdentification" placeholder="" columndataname="ID_Store">
+            </div>
+        </div>
+    </form>
+
+    <form id="frmaddress">
+        <h3>Dirección</h3>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtProvince", type: "text", label: "Provincia", columnDataName: "Province")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCanton", type: "text", label: "Cantón", columnDataName: "Canton")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCity", type: "text", label: "Ciudad", columnDataName: "City")
+            </div>
+
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtAddress", type: "text", label: "Dirección exacta", columnDataName: "Description")
+
+            </div>
+        </div>
+    </form>
+
+    <div class="row text-center">
+        <div class="col-2">
+            <center>
+                @Html.CtrlButton(viewName: "vCreateSeller", id: "btnCreateSeller", label: "Registrarse", onClickFunction: "Create", buttonType: "success")
+            </center>
+        </div>
+        <div class="col-lg-5">
+            <center>
+                @Html.CtrlButton(viewName: "vCreateSeller", id: "btnCancelSeller", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+                </center>
+        </div>
+    </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/vCreateSeller.js"></script>
+<script src="~/Scripts/Views/UploadImage.js"></script>
+
+
+
+
+

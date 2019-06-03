@@ -1,0 +1,205 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/BlankLayout.cshtml";
+}
+<script src="~/Scripts/Views/gmaps.js"></script>
+<div class="containerFrom">
+    <div class="row">
+        <h2 style="margin-left:20%;">Registro de tienda</h2>
+    </div>
+    <form id="frmStoreAdmin">
+        <div class="row">
+            <h3>Información del adminstrador de tienda</h3>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Cédula", columnDataName: "Id")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtName1", type: "text", label: "Nombre", columnDataName: "Name_1")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtFirstLastName", type: "text", label: "Primer Apellido", columnDataName: "Last_Name1")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtSecondLastName", type: "text", label: "Segundo Apellido", columnDataName: "Last_Name2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtPhone", type: "text", label: "Teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Email", columnDataName: "Email")
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtPassword", type: "password", label: "Contraseña", columnDataName: "Password")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtConfirmPassword", type: "password", label: "Confirmar contraseña", columnDataName: "ConfirmPassword")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card border-warning mb-3" id="passwordAdvice" style="position: relative;
+    margin-top: -30%;
+    margin-left: 50%;">
+
+                <div class="card-body">
+                    <h4 class="card-title">¡Aviso!</h4>
+                    <h5 class="card-title">La contraseña debe cumplir con:</h5>
+                    <p class="card-text" style="color: brown;">
+                        -Un cáracter especial.<br />
+                        -Una letra minúscula.<br />
+                        -Un número.<br />
+                        -Una letra mayúscula.<br />
+                        -Mínimo de 8 caracteres<br />
+                        -Sin espacios.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="frmStore">
+        <div class="row">
+            <h3>Información de la tienda</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-1">
+                <div id="divImagen"></div>
+                @Html.CtrlInput(id: "txtURLlogo", type: "text", label: "Logo", columnDataName: "Logo")
+                @Html.CtrlButton(viewName: "CreateStore", id: "btnSelectImage", label: "Seleccione una imagen", buttonType: "warning")
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtNumber", type: "text", label: "Cédula jurídica", columnDataName: "Id")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtName", type: "text", label: "Nombre empresa", columnDataName: "Name")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtPhoneStore", type: "telephone", label: "Teléfono", columnDataName: "Phone")
+            </div>
+            <div class="col-lg-6">
+                <label>Categoría</label>
+                <select class="form-control" id="CategorySelect" columndataname="Category"></select>
+            </div>
+        </div>
+        <br />
+
+        <br />
+    </form>
+    <br />
+
+    <br />
+    <form id="frmCellar">
+        <div class="row">
+            <h3>Información de la bodega</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtAddress", type: "text", label: "Dirección", columnDataName: "Address")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtLong", type: "text", label: " ", columnDataName: "Latitude")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLat", type: "text", label: " ", columnDataName: "Longitude")
+            </div>
+            <div id="map">
+                <script>
+                    var map;
+                    function initMap(latitud = 0, longitud = 0, panel = false) {
+                        var zoom = 7;
+
+                        if (latitud == 0 && longitud == 0) {
+                            costaRica = { lat: 9.922114582760013, lng: -84.08251953125 };
+                        } else {
+                            costaRica = { lat: latitud, lng: longitud };
+                            zoom = 15;
+                        }
+
+                        map = new GMaps({
+                            div: '#map',
+                            lat: costaRica.lat,
+                            lng: costaRica.lng,
+                            zoom: zoom
+                        });
+
+                        if (panel == true) {
+                            map.addMarker({
+                                lat: costaRica.lat,
+                                lng: costaRica.lng,
+                            });
+                            map.addMarker({
+                                lat: costaRica.lat,
+                                lng: costaRica.lng,
+                            });
+                        } else {
+                            map.addMarker({
+                                lat: costaRica.lat,
+                                lng: costaRica.lng,
+                                draggable: true,
+                                dragend: function (event) {
+
+                                    $("#txtLong").val(event.latLng.lng());
+                                    $("#txtLat").val(event.latLng.lat());
+
+                                }
+                            });
+                        }
+                    };
+
+                </script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+        </div>
+    </form>
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <center>
+                    @Html.CtrlButton(viewName: "CreateStore", id: "btnCreate", label: "Registrar", onClickFunction: "validateInputStore", buttonType: "success")
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    @Html.CtrlButton(viewName: "CreateStore", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+                </center>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmcvP3F0Qsg4p7ISc3b265epCcht9_uS0&callback=initMap" async defer></script>
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/UploadImage.js"></script>
+<link href="~/Content/Map.css" rel="stylesheet" />
+
+<script src="~/Scripts/Views/Store/CreateStore.js"></script>
+

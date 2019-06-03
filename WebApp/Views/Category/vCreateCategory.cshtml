@@ -1,0 +1,32 @@
+﻿@using WebApp.Helpers;
+@{
+
+    Layout = "~/Views/Shared/DashboardPlatform.cshtml";
+}
+
+<div class="containerCategory">
+
+    <div class="row justify-content-center"></div>
+
+    <form id="frmCategory">
+        <h1 id="IDH1" style="margin-left:50px;">Registrar categoría</h1>
+        <div class="row" style="margin-left:36%;">
+            <div id="" col-lg-4">
+                <h3>Nombre categoría</h3>
+                @Html.CtrlInput(id: "txtName", type: "text", label: "", columnDataName: "Name")
+            </div>
+        </div>
+    </form>
+    <div class=" row">
+        <div  style="margin-left: 33%">
+            @Html.CtrlButton(viewName: "vCreateCategory", id: "btnCreateCategory", label: "Registrar", onClickFunction: "validateInput", buttonType: "success")
+        </div>
+        <div class="col-lg-5  text-lg-left">
+            @Html.CtrlButton(viewName: "vCreateCategory", id: "btnCancelCategory", label: "Cancelar", onClickFunction: "Cancelar", buttonType: "danger")
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Views/vCreateCategory.js"></script>
+
+

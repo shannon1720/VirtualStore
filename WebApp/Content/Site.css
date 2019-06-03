@@ -1,0 +1,174 @@
+﻿
+
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, li, a {
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+.p, .h1, .h2, .h3, .h4, .h5, .h6, .ul, .li, .a {
+}
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 75px;
+    }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 220px;  
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #000000;
+    background-color:transparent;
+}
+
+.form-control is-invalid {
+border-bottom:2px solid #ff0000;
+}
+
+.container body-content {
+    margin: auto 100%;
+}
+
+
+
+#mapid {
+    height: 180px;
+}
+
+#divImagen,
+#divImagen1,
+#divImage1,
+#divImage2,
+#divImage3,
+#divImage4,
+#divImage5,
+#divVideo,
+#divUrl_Profile_Pric,
+#divUrl_Photo_Id {
+    background: url(../Content/imgs/ICO.jpg);
+    border-radius: 50%;
+    background-size: contain;
+    width: 280px;
+    height: 280px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+#txtEmail2,
+#txtURLlogo,
+#txtphotoId,
+#txtFile,
+#txtIdAddress,
+#txtImage1,
+#txtImage2,
+#txtImage3,
+#txtImage4,
+#txtImage5,
+#txtVideo,
+#txtUrl_Profile_Pric,
+#txtUrl_Photo_Id,
+#txtID_Category,
+#txtId_shipping,
+#txtUser_Email {
+    display: none;
+}
+
+.containerFrom {
+    margin-left: 21%;
+    /* margin-top: -5%; */
+    margin-right: -20%;
+}
+
+    .containerFrom h3 {
+      
+
+
+    margin-top: 2%;
+    margin-left: -20%;
+    margin-bottom: 1%;
+
+    }
+
+.redButton {
+    background-color: red;
+}
+
+#btnCreateCategory {
+    margin-left: 205px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+#btnCancelCategory {
+    margin-left: 405px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+#frmCategory {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 25px;
+}
+
+-#IDH1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 300px;
+}
+
+
+#map {
+    height: 400px; /* The height is 400 pixels */
+    width: 400px; /* The width is the width of the web page */
+}
+
+
+
+
+#divConCart {
+    margin-left: 10%;
+}
+
+    #divConCart a {
+        font-size: 30px;
+        margin-top: -17%;
+        margin-left: 16%;
+    }
+
+    #divConCart h3 {
+        display: inline-block;
+        font-size: 16px;
+        color: #009345;
+        float: right;
+        margin-top: -19%;
+        margin-right: 60%;
+    }
+
+
+#divContadorCarrito h4 {
+    display: block;
+    font-size: 15px;
+    color: #000;
+    float: right;
+    margin-top: 16px;
+}

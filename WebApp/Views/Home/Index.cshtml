@@ -1,0 +1,67 @@
+﻿@using WebApp.Helpers;
+<link href="~/Content/loginStyle.css" rel="stylesheet" />
+@{
+                /**/
+
+
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="img">
+    <img src="~/Content/imgs/logoACME.jpg">
+</div>
+<div id="container">
+
+    <form id="frmEdition">
+        @*class="text-center">*@
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Iniciar sesión</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo", columnDataName: "Email")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                @Html.CtrlInput(id: "txtPassword", type: "password", label: "Contraseña", columnDataName: "Password")
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <label>
+                    No tienes una cuenta?
+                    <a href="http://localhost:52014/Client/vCreateClient">Registrate </a>
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Se parte de nuestros proveedores de envío
+                    <a href="http://localhost:52014/Bussiness/vBussinesManager"> Registrate </a>
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Tiene una tienda?
+                    <a href="http://localhost:52014/Store/vCreateStore"> Registrala </a>
+                </label>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="col-4">
+                @Html.CtrlButton(viewName: "vLogIn", id: "btnLogIn", label: "Iniciar sesión", onClickFunction: "validateInput", buttonType: "success")
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+<script src="~/Scripts/Views/vLogIn.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

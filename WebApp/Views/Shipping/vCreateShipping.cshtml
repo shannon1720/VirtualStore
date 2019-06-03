@@ -1,0 +1,76 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="containerFrom">
+
+
+    <div class="row justify-content-center"></div>
+
+    <form id="frmShipping">
+        <h3>Registro de proveedor de envío</h3>
+        <div class="row ">
+            <div id="col-lg-4">
+                <div id="divImagen"></div>
+                @Html.CtrlButton(viewName: "vCreateShipping", id: "btnSelectImage", label: "Seleccione una imagen", onClickFunction: "ValidarImagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtURLlogo", type: "text", label: " ", columnDataName: "Logo")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtIdentification", type: "text", label: "Cedula juridíca", columnDataName: "Identification")
+                @Html.CtrlInput(id: "txtEmail2", type: "text", label: "", columnDataName: "Email")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName", type: "text", label: "Nombre", columnDataName: "Name")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Moneda</label>
+                <select class="form-control" id="CurrencySelect" columndataname="IdCurrency"></select>
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtMinimun_Rate", type: "number", label: "Tarifa base", columnDataName: "Minimum_Rate")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtRate", type: "number", label: "Costo de tarifa por kilómetro", columnDataName: "Rate")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCoveredArea", type: "number", label: "Area de covertura en km", columnDataName: "CoveredArea")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_Number", type: "text", label: "Número de teléfono", columnDataName: "Phone_Number")
+            </div>
+        </div>
+         
+    </form>
+    <div class="row text-center">
+        <div class="col-lg-2">
+            <center>
+                @Html.CtrlButton(viewName: "vCreateShipping", id: "btnCreate", label: "Registrar", onClickFunction: "vaidateInput", buttonType: "success")
+            </center>
+        </div>
+        <div class="col-lg-5">
+            <center>
+                @Html.CtrlButton(viewName: "vCreateShipping", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+            </center>
+        </div>
+    </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/gmaps.js"></script>
+<script src="~/Scripts/Views/vCreateShipping.js"></script>
+<script src="~/Scripts/Views/UploadImage.js"></script>
+

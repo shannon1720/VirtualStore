@@ -1,0 +1,51 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vRetrieveProduct.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardStore.cshtml";
+}
+<div class="row input-group">
+    <div class="col-lg-3 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnProduct", label: "Añadir Producto", onClickFunction: "AddProduct", buttonType: "success")
+    </div>
+</div>
+<br />
+@Html.CtrlTable(viewName: "vRetrieveProduct", id: "tblProduct", title: "Lista de Productos",
+columnsTitle: "Nombre, Categoria ,Existencias ,Estado",
+ColumnsDataName: "Name,CategoryName,Stock,Active",
+onSelectFunction: "BindFields")
+<br />
+<br />
+<div class="row input-group">
+    <div class="col-lg-3 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnActive", label: "Activar", onClickFunction: "Delete", buttonType: "success")
+    </div>
+    <div class="col-lg-3 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnModify", label: "Modificar", onClickFunction: "RedirectToModify")
+    </div>
+    <div class="col-lg-3 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnStock", label: "Existencias", onClickFunction: "Stock", buttonType: "warning")
+    </div>
+    <div class="col-lg-3 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnDelete", label: "Desactivar", onClickFunction: "Delete", buttonType: "danger")
+    </div>
+</div>
+<br />
+<div id="Stock">
+    <form id="StockForm">
+        <label>Modifique la cantidad de existencias</label>
+        <input id="txtStock" class="form-control" type="number" columnDataName="Stock" />
+    </form>
+    <br />
+    <br />
+    <div id="stockButtons" class="row input-group">
+        <div class="col-lg-3 d-inline-block">
+            @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnModifyStock", label: "Modificar", onClickFunction: "UpdateStock", buttonType: "success")
+        </div>
+        <div class="col-lg-3 d-inline-block">
+            @Html.CtrlButton(viewName: "vRetrieveProduct", id: "btnCancelStock", label: "Cancelar", onClickFunction: "Hide", buttonType: "danger")
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+

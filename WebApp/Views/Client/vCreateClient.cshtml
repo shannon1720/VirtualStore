@@ -1,0 +1,134 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<div class="text-center">
+    <h1> Crea una cuenta </h1>
+    <h3> ¡Es gratis y lo será siempre!</h3>
+    <br />
+    <br />
+</div>
+<div class="containerFrom">
+    <form id="ClientForm">
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divUrl_Photo_Id"></div>
+                @Html.CtrlButton(viewName: "vCreateClient", id: "btnUrl_Photo_Id", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtUrl_Photo_Id", type: "text", label: "Foto de Cédula de Identidad ", columnDataName: "Url_Photo_Id")
+            </div>
+            <div class="col-lg-4">
+                <div id="divUrl_Profile_Pric" class="text-center"></div>
+                @Html.CtrlButton(viewName: "vCreateClient", id: "btnUrl_Profile_Pric", label: "Seleccione una imagen", buttonType: "warning")
+                @Html.CtrlInput(id: "txtUrl_Profile_Pric", type: "text", label: "Foto de Perfil", columnDataName: "Url_Profile_Pric")
+            </div>
+        </div>
+        <br />
+        <br />
+        <h4>Información Personal</h4>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_1", type: "text", label: "Nombre", columnDataName: "Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_2", type: "text", label: "Segundo Nombre", columnDataName: "Name_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLast_Name_1", type: "text", label: "Primer apellido", columnDataName: "Last_Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLast_Name_2", type: "text", label: "Segundo apellido", columnDataName: "Last_Name_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_1", type: "text", label: "Número de teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_2", type: "text", label: "Número de teléfono secundario", columnDataName: "Phone_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtEmail", type: "text", label: "Correo Electrónico", columnDataName: "Email")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Número de cedula", columnDataName: "Id")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPassword", type: "password", label: "Contraseña", columnDataName: "Password")
+                <label>*La contraseña debe incluir:</label><br />
+                <label>-Una letra en mayúscula</label><br />
+                <label>-Una letra en minúscula</label><br />
+                <label>-Un dígito</label><br />
+                <label>-Un caracter especial</label><br />
+                <label>*La contrasena no debe incluir:</label><br />
+                <label>-Espacios </label><br />
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtVerifyPassword", type: "password", label: "Confirmar contraseña", columnDataName: "VerifyPassword")
+            </div>
+        </div>
+        <br />
+        <br />
+    </form>
+    <form id="AddressForm">
+        <h4>Dirección</h4>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtProvince", type: "text", label: "Provincia", columnDataName: "Province")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCanton", type: "text", label: "Canton", columnDataName: "Canton")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCity", type: "text", label: "Ciudad", columnDataName: "City")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtDescription", type: "text", label: "Dirección Exacta", columnDataName: "Description")
+            </div>
+        </div>
+        <br />
+        <br />
+    </form>
+    @*<form id="CategoryForm">
+        <h4>Preferencias</h4>
+        <br />
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtPreference", type: "text", label: "Provincia", columnDataName: "Province")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtCanton", type: "text", label: "Canton", columnDataName: "Canton")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtCanton", type: "text", label: "Canton", columnDataName: "Canton")
+            </div>
+        </div>
+    </form>*@
+    <div class="row input-group">
+        <div class="col-lg-4 d-inline-block">
+            @Html.CtrlButton(viewName: "vCreateClient", id: "btnCreate", label: "Registrar", onClickFunction: "Create", buttonType: "success")
+        </div>
+        <div class="col-lg-4 d-inline-block">
+            @Html.CtrlButton(viewName: "vCreateClient", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+        </div>
+    </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/vCreateClient.js"></script>
+<script src="~/Scripts/Views/UploadImageClient.js"></script>

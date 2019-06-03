@@ -1,0 +1,115 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/DashboardSeller.cshtml";
+     // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="containerFrom">
+    <form id="frmSeller">
+
+        <div class="row">
+            <h1>Modificar vendedor</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divImagen"></div>
+                @Html.CtrlInput(id: "txtFile", type: "text", label: "Foto de perfil", columnDataName: "Url_Profile_Pric")
+                @Html.CtrlButton(viewName: "vUpdateSeller", id: "btnSelectImage1", label: "Seleccione una imagen", buttonType: "warning")
+
+            </div>
+            <div class="col-lg-4">
+                <div id="divImagen1"></div>
+                @Html.CtrlInput(id: "txtphotoId", type: "text", label: "Foto de identificación", columnDataName: "Url_Photo_ID")
+                @Html.CtrlButton(viewName: "vUpdateSeller", id: "btnSelectImage2", label: "Seleccione una imagen", buttonType: "warning")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "ID")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo", columnDataName: "Email")
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_1", type: "text", label: "Primer nombre", columnDataName: "Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_2", type: "text", label: "Segundo nombre (opcional)", columnDataName: "Name_2")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_1", type: "text", label: "Primer apellido", columnDataName: "Last_Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_2", type: "text", label: "Segundo apellido", columnDataName: "Last_Name_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_1", type: "text", label: "Teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_2", type: "text", label: "Teléfono (opcional)", columnDataName: "Phone_2")
+            </div>
+        </div>
+    </form>
+
+    <form id="frmaddress">
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtAddress", type: "text", label: "Dirección", columnDataName: "Description")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtProvince", type: "text", label: "Provincia", columnDataName: "Province")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCanton", type: "text", label: "Cantón", columnDataName: "Canton")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtCity", type: "text", label: "Distrito", columnDataName: "City")
+            </div>
+            @Html.CtrlInput(id: "txtIdAddress", type: "text", label: "", columnDataName: "Id")
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <center>
+                    @Html.CtrlButton(viewName: "vUpdateSeller", id: "btnUpdate", label: "Modificar", onClickFunction: "Update", buttonType: "success")
+                </center>
+            </div>
+            <div class="col-md-3">
+                <center>
+                    @Html.CtrlButton(viewName: "vUpdateSeller", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+                </center>
+            </div>
+            @*<div class="col-md-5">
+                <center>
+                    @Html.CtrlButton(viewName: "vUpdateSeller", id: "btnDesactivar", label: "Desactivar cuenta", onClickFunction: "Delete", buttonType: "primary")
+                </center>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/vUpdateSeller.js"></script>
+<script src="~/Scripts/Views/UploadImage.js"></script>
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/DashboardDeliver.cshtml";
+}
+
+<div class="containerFrom">
+    <form id="frmDeliver">
+
+        <div class="row">
+            <h3>Modificar mensajero</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName", type: "text", label: "Primer nombre", columnDataName: "Name")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName1", type: "text", label: "Primer apellido", columnDataName: "LastName1")
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName2", type: "text", label: "Segundo apellido", columnDataName: "LastName2")
+
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_1", type: "text", label: "Teléfono", columnDataName: "Phone_Number")
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <center>
+                    @Html.CtrlButton(viewName: "vUpdateDeliver", id: "btnUpdate", label: "Modificar", onClickFunction: "validateInput", buttonType: "success")
+                </center>
+            </div>
+            <div class="col-md-3">
+                <center>
+                    @Html.CtrlButton(viewName: "vUpdateSeller", id: "btnCancel", label: "Cancelar", onClickFunction: "Cancel", buttonType: "danger")
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Views/vUpdateDeliver.js"></script>
+
+
+
+
+
+

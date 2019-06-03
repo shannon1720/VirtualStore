@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = "~/Views/Shared/DashboardStore.cshtml";
+}
+<div class="containerFrom">
+    <form id="frmStoreAdmin">
+        <div class="row">
+            <h3>Información administrador de tienda</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Cédula", columnDataName: "Id")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtName1", type: "text", label: "Nombre", columnDataName: "Name_1")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtFirstLastName", type: "text", label: "Primer Apellido", columnDataName: "Last_Name1")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtSecondLastName", type: "text", label: "Segundo Apellido", columnDataName: "Last_Name2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtPhone", type: "text", label: "Teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-3">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Email", columnDataName: "Email")
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <center>
+                        @Html.CtrlButton(viewName: "vRetrieveUpdateAdmin", id: "btnUpdate", label: "Modificar", onClickFunction: "validateInput", buttonType: "success")
+                    </center>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+    <script src="~/Scripts/Views/Store/vRetrieveUpdateStoreAdmin.js"></script>

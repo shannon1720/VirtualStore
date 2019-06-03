@@ -1,0 +1,97 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/DashboardBussiness.cshtml";
+}
+
+<div class="containerFrom">
+    <form id="frmBussines">
+
+        <div class="row">
+            <h3>Modificar de administrador de empresa</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="divImagen"></div>
+                @Html.CtrlInput(id: "txtFile", type: "text", label: "Foto de perfil", columnDataName: "URL_Profile_Pric")
+                @Html.CtrlButton(viewName: "vUpdateBussinesManager", id: "btnSelectImage1", label: "Seleccione una imagen", buttonType: "warning")
+
+            </div>
+            <div class="col-lg-4">
+                <div id="divImagen1"></div>
+                @Html.CtrlInput(id: "txtphotoId", type: "text", label: "Foto de identificación", columnDataName: "URL_Photo_ID")
+                @Html.CtrlButton(viewName: "vUpdateBussinesManager", id: "btnSelectImage2", label: "Seleccione una imagen", buttonType: "warning")
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtId", type: "text", label: "Identificación", columnDataName: "Id")
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_1", type: "text", label: "Primer nombre", columnDataName: "Name_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtName_2", type: "text", label: "Segundo nombre (opcional)", columnDataName: "Name_2")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_1", type: "text", label: "Primer apellido", columnDataName: "LastName_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtLastName_2", type: "text", label: "Segundo apellido", columnDataName: "LastName_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_1", type: "text", label: "Teléfono", columnDataName: "Phone_1")
+            </div>
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtPhone_2", type: "text", label: "Teléfono (opcional)", columnDataName: "Phone_2")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo", columnDataName: "Email")
+            </div>
+         
+        </div>
+
+
+    </form>
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <center>
+                    @Html.CtrlButton(viewName: "vUpdateBussinesManager", id: "btnUpdate", label: "Modificar", onClickFunction: "validateInput", buttonType: "success")
+                </center>
+            </div>
+           
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="~/Scripts/Views/vUpdateBussinesManager.js"></script>
+<script src="~/Scripts/Views/UploadImage.js"></script>
+
+
+
+
+
+
+

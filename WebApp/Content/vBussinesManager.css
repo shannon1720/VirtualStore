@@ -1,0 +1,18 @@
+﻿body {
+  font-family:Roboto;
+}
+h3 {
+    font-size: 20px;
+    margin:auto,100px;
+}
+input {
+    font-size: 16px;
+    display: inline-block;
+    border: none;
+
+}
+
+label {
+    font-size:16px;
+}
+

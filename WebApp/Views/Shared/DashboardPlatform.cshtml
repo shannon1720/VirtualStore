@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ACME</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/Views/SideBarDashboard.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/PopUp.js"></script>
+    <script src="~/Scripts/Views/LogOut.js"></script>
+    <link href="~/Content/CustomScrollbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="~/Content/StyleDashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <main>
+
+        <div class="wrapper">
+            <nav id="sidebar">
+
+                <div class="sidebar-header">
+                    <center>
+                        <h2>ACME</h2>
+                        <h4>Administrador</h4>
+                    </center>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <!--Start first option  -->
+                    <li class="">
+                        <a data-toggle="collapse" aria-expanded="false" href="#collapse1">Listas</a>
+                    </li>
+                    <ul class="collapse list-unstyled" id="collapse1">
+                        <li><a href="http://localhost:52014/Store/vAllStores">Tiendas </a></li>
+                        <li><a href="http://localhost:52014/Store/vRetrieveStoreAdministrator">Administradores tiendas </a></li>
+                        <li><a href="http://localhost:52014/Seller/vRetrieveSellerPlatform">Vendedores </a></li>
+                        <li><a href="http://localhost:52014/Shipping/vRetrieveShipping">Empresas </a></li>
+                        <li><a href="http://localhost:52014/Bussiness/vRetrieveBussinesManager">Administradores de empresas</a></li>
+                        <li><a href="http://localhost:52014/Deliver/vRetrieveDeliverPlatform">Mensajeros </a></li>
+                        <li><a href="http://localhost:52014/Client/vRetrieveClient">Clientes</a></li>
+                    </ul>
+                    <!--End first option  -->
+                    <!--Start second option-->
+                    <li><a data-toggle="collapse" aria-expanded="false" href="#collapse2">Categorías</a></li>
+                    <ul class="collapse list-unstyled" id="collapse2">
+                        <li class=""><a href="http://localhost:52014/Category/vCreateCategory">Registrar categoría</a></li>
+                        <li class=""><a href="http://localhost:52014/Category/vRetrieveCategory">Listar categorías</a></li>
+                    </ul>
+                    <!--End second option-->
+
+
+                    <li><a onclick="LogOut()">Salir</a></li>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                </ul>
+            </nav>
+            <div id="content">
+                <div id="postContent">
+
+                    @RenderBody()
+                </div>
+
+            </div>
+
+
+    </main>
+
+</body>
+
+</html>
+
+

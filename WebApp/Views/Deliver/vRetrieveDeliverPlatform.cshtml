@@ -1,0 +1,25 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vRetrieveDeliver.js"></script>
+<script src="~/Scripts/Views/ControlActions.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardPlatform.cshtml";
+}
+
+
+@Html.CtrlTable(viewName: "vRetrieveDeliver", id: "tblDeliver", title: "Lista de mensajeros",
+    columnsTitle: "Cédula,Nombre,Primer apellido,Segundo apellido,Email, Número de teléfono,Estado", ColumnsDataName: "ID,Name_1,Last_Name1,Last_Name2,Email,Phone_1,State", onSelectFunction: "BindFields")
+
+
+
+<div class="row input-group ">
+    <div class="col-lg-3 d-inline-block">
+    </div>
+    <div class="col-lg-3 justify-content-xl-center d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveDeliver", id: "btnActive", label: "Activar", onClickFunction: "Delete", buttonType: "warning")
+    </div>
+    <div class="col-lg-3 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveDeliver", id: "btnDelete", label: "Desactivar", onClickFunction: "Delete", buttonType: "danger")
+    </div>
+    <div class="col-lg-3 d-inline-block">
+    </div>
+</div>

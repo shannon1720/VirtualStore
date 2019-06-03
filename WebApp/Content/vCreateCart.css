@@ -1,0 +1,59 @@
+﻿
+#tblCart th, #tblCart td {
+    vertical-align: middle;
+    border-collapse: collapse;
+    padding: 4px;
+    max-width: 250%;
+    min-width: 150%;
+    height: 50px;
+    text-align: center;
+    font-size: 13px;
+}
+
+#tblCart {
+    margin-left: 2%;
+    max-width: 100%;
+    min-width: 100%
+}
+
+    #tblCart th {
+        font-weight: bold;
+        height: 25px;
+        background-color: #56CC9D;
+    }
+
+.fa-times-circle {
+    color: red;
+    padding: 3px;
+    font-size: 18px;
+}
+
+    .fa-times-circle:hover {
+        color: red;
+        padding: 3px;
+        font-size: 18px;
+    }
+#map {
+    margin-left: 10px;
+}
+.card {
+    margin-top: -18%;
+    margin-bottom: 15%;
+    margin-left: 40%;
+    max-width: 300px;
+    position: fixed;
+    /* z-index:;*/
+}
+
+#divMap {
+    height: 400px;
+}
+#divCompra {
+    height: 100%;
+}
+
+#divprovider {
+    margin-top:10%;
+    height: 100%;
+}
+

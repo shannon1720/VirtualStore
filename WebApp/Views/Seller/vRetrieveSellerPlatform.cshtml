@@ -1,0 +1,21 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/ControlActions.js"></script>
+<script src="~/Scripts/Views/vRetrieveSellerPlatform.js"></script>
+@{
+    Layout = "~/Views/Shared/DashboardPlatform.cshtml";
+
+}
+
+@Html.CtrlTable(viewName: "vRetrieveSellerPlatform", id: "tblSeller", title: "Lista de vendedores",
+    columnsTitle: "Identificación,Primer Nombre,Primer Apellido,Segundo Apellido,Número de telefono,Email,Estado",
+    ColumnsDataName: "ID,Name_1,Last_Name_1,Last_Name_2,Phone_1,Email,State", onSelectFunction: "BindFields")
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-6 d-inline-block">
+        @Html.CtrlButton(viewName: "vRetrieveSellerPlatform", id: "btnActive", label: "Activar", onClickFunction: "Delete", buttonType: "success")
+    </div>
+    <div class="col-lg-6 d-inline-block text-lg-right">
+        @Html.CtrlButton(viewName: "vRetrieveSellerPlatform", id: "btnDelete", label: "Desactivar", onClickFunction: "Delete", buttonType: "danger")
+    </div>
+</div>
